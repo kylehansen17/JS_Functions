@@ -84,3 +84,43 @@ function returnDay(x) {
         return weekDAY[x];
     }
 }
+
+
+function add(x, y) {
+    return x + y;
+}
+// Function Expression
+const add = function (x, y) {
+    return x + y;
+}
+
+
+// Higher Order functions
+function callTwice(func) {
+    func();
+    func();
+}
+
+function callTenTimes(f) {
+    for (let i = 0; i < 10; i++) {
+        f();
+    }
+}
+
+function rollDie() {
+    const roll = Math.floor(Math.random() * 6) + 1
+    console.log(roll)
+}
+
+callTwice(rollDie)
+
+
+// Return function as a value. Aka "Factory Function"
+function makeBetweenFunc(min, max) {
+    return function (num) {
+        return num >= min && num <= max;
+    }
+}
+
+const isChild = makeBetweenFunc(0, 18)
+const isAdult = makeBetweenFunc(19, 64)
