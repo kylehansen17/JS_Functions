@@ -124,3 +124,75 @@ function makeBetweenFunc(min, max) {
 
 const isChild = makeBetweenFunc(0, 18)
 const isAdult = makeBetweenFunc(19, 64)
+
+
+// Method
+const myMath = {
+    PI: 3.1459,
+    square: function (num) {
+        return num * num;
+    },
+    cube: function (num) {
+        return num ** 3;
+    }
+}
+
+myMath.square(2)
+
+// Shorthand way to write the same method
+const myMath = {
+    PI: 3.1459,
+    square(num) {
+        return num * num;
+    },
+    cube(num) {
+        return num ** 3;
+    }
+}
+
+
+// Keyword "This"
+const cat = {
+    name: 'Blue Steele',
+    color: 'grey',
+    meow() {
+        console.log(`${this.name} says Meowww`);
+    }
+}
+
+
+// Try/Catch
+function yell(msg) {
+    try {
+        console.log(msg.toUpperCase().repeat(3));
+    } catch (e) {
+        console.log('Please pass a string next time!')
+    }
+}
+
+
+// ********** Array Callback Methods **********
+// forEach method
+const numbers = [1, 2, 3, 4, 5]
+
+numbers.forEach(function (el) {
+    console.log(el);
+})
+// for of is the newer version of forEach
+for (let el of numbers) {
+    console.log(el);
+}
+
+const movies = [
+    {
+        title: 'Amadeus',
+        score: 99
+    },
+    {
+        title: 'Stand By Me',
+        score: 85
+    }
+]
+movies.forEach(function (movie) {
+    console.log(`${movie.title} - ${movie.score}/100`)
+})
