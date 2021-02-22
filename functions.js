@@ -196,3 +196,55 @@ const movies = [
 movies.forEach(function (movie) {
     console.log(`${movie.title} - ${movie.score}/100`)
 })
+
+
+// Map Method
+const numbers = [1, 2, 3, 4]
+
+const doubles = numbers.map(function (num) {
+    return num * 2;
+})
+
+
+// Arrow Functions
+const square = (num) => {
+    return num * num;
+}
+
+// Arrow Function Implicit Return
+const rollDie = () => (
+    Math.floor(Math.random() * 6) + 1
+)
+
+const add = (a, b) => a + b
+
+
+console.log('Hello...')
+setTimeout(() => {
+    console.log('...are you still there?')
+}, 3000)
+
+const id = setInterval(() => {
+    console.log(Math.random())
+}, 2000)
+
+clearInterval(id);
+
+
+// Filter Method
+const movies = [
+    {
+        title: 'Amadeus',
+        score: 99,
+        year: 1984
+    },
+    {
+        title: 'Sharknado',
+        score: 35,
+        year: 2013
+    }
+]
+
+const goodMovies = movies.filter(m => m.score > 80)
+
+movies.filter(m => m.score > 80).map(m => m.title);
