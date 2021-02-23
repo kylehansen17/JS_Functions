@@ -248,3 +248,10 @@ const movies = [
 const goodMovies = movies.filter(m => m.score > 80)
 
 movies.filter(m => m.score > 80).map(m => m.title);
+
+
+const exams = [80, 98, 92, 78]
+
+exams.every(score => score >= 75)
+// will return true
+
