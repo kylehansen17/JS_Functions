@@ -216,6 +216,7 @@ const rollDie = () => (
     Math.floor(Math.random() * 6) + 1
 )
 
+// If Function Expression fits on one line, no parenthesis needed
 const add = (a, b) => a + b
 
 
