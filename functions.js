@@ -256,3 +256,23 @@ const exams = [80, 98, 92, 78]
 exams.every(score => score >= 75)
 // will return true
 
+
+// Reduce Method
+[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+});
+// Callback     Accumulator  CurrentValue  Return Value
+// first call       3              5            8
+// second call      8              7            15
+// third call       15             9            24
+// fourth call      24             11           35
+
+// Finding smallest value using Reduce
+const prices = [9.99, 1.50, 19.99]
+const minPrice = prices.reduce((min, price) => {
+    if (price < min) {
+        return price;
+    }
+    return min;
+})
+// minPrice = 1.50
