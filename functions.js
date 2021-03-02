@@ -276,3 +276,87 @@ const minPrice = prices.reduce((min, price) => {
     return min;
 })
 // minPrice = 1.50
+
+
+// ****** Newer JavaScript Features ******
+// Default Params
+function rollDie(numSides = 6) {
+    return Math.floor(Math.random() * numSides) + 1
+}
+// Defaults parameter(number of sides) to 6 if none is given
+
+
+// Spread in Function Calls
+console.log('hello')
+// returns hello
+console.log(...'hello')
+// returns h e l l o
+// returns/passes each individual element of string or array
+
+
+// Spread with Array Literals
+const cats = ['Blue', 'Scout', 'Rocket'];
+const dogs = ['Rusty', 'Wyatt'];
+
+const allPets = [...cats, ...dogs];
+// allPets = ['Blue', 'Scout', 'Rocket', 'Rusty', 'Wyatt']
+
+
+// Spread with Objects
+const dataFromForm = {
+    email: 'blueman@gmail.com',
+    password: 'tobias123!',
+    username: 'tfunke'
+}
+const newUser = { ...dataFromForm, id: 2345, isAdmin: false }
+// newUser =
+// email: 'blueman@gmail.com',
+// password: 'tobias123!',
+// username: 'tfunke'
+// id: 2345,
+// isAdmin: false
+
+
+// Rest Params
+function sum(...nums) {
+    return nums.reduce((total, el) => total + el)
+}
+// (...nums) parameter can take any number of arguments
+// sum(1,2,3) or sum(1,2,3,4,5,6)
+
+
+// Destructuring Arrays
+const scores = [92, 89, 88, 77]
+const [gold, silver] = scores;
+// gold = 92
+// silver = 89
+
+
+// Destructuring Objects
+const user = {
+    email: 'harvey@gmail.com',
+    firstName: 'Harvey',
+    lastName: 'Milk',
+    born: 1930,
+    city: 'San Francisco'
+}
+
+const { email, firstName, city } = user;
+// creates the variables:
+// email = 'harvey@gmail.com'
+// firstName = 'Harvey'
+// city = 'San Francisco'
+
+const { born: birthYear } = user;
+// renames born to birthYear
+// birthYear = 1930
+
+
+// Destructuring Params
+function fullName(user) {
+    return `${user.firstName} ${user.lastName}`
+}
+// Same function as above but removing 'user' since we are destructuring in the funcion parameter
+function fullName({ firstName, lastName }) {
+    return `${firstName} ${lastName}`
+}
